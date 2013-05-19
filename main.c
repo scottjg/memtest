@@ -502,6 +502,8 @@ void do_test(void)
 					beep(1000);
 					beep(2000);
 				}
+				if (v->pass >= 2)
+					cpaint(LINE_MSG+5, 0, 80, WHITE, GREEN);
 			}
 		}
 		

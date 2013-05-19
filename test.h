@@ -91,6 +91,24 @@ typedef unsigned long ulong;
 #define POP2_Y	2
 //#define NULL	0
 
+#define BLACK       0
+#define BLUE        1
+#define GREEN       2
+#define CYAN        3
+#define RED         4
+#define MAGENTA     5
+#define BROWN       6
+#define LT_GRAY     7
+#define DK_GRAY     8
+#define LT_BLUE     9
+#define LT_GREEN   10
+#define LT_CYAN    11
+#define LT_RED     12
+#define LT_MAGENTA 13
+#define YELLOW     14
+#define WHITE      15
+
+
 /* memspeed operations */
 #define MS_COPY		1
 #define MS_WRITE	2
@@ -117,6 +135,7 @@ void serial_echo_print(const char *s);
 void ttyprint(int y, int x, const char *s);
 void ttyprintc(int y, int x, char c);
 void cprint(int y,int x, const char *s);
+void cpaint(int y, int x, int len, unsigned char fgcolor, unsigned char bgcolor);
 void hprint(int y,int x,ulong val);
 void hprint2(int y,int x, ulong val, int len);
 void hprint3(int y,int x, ulong val, int len);

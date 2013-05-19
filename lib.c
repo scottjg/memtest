@@ -235,6 +235,22 @@ void clear_scroll(void)
         }
 }
 
+
+/*
+ * Change colors on screen
+ */
+void cpaint(int y, int x, int len, unsigned char fgcolor, unsigned char bgcolor)
+{
+	register int i;
+	char *dptr;
+
+	dptr = (char *)(SCREEN_ADR + (160*y) + (2*x) + 1);
+	for (i=0; i < len; i++) {
+		*dptr = (bgcolor << 4) | (fgcolor & 0xF);
+		dptr += 2;
+	}
+}
+
 /*
  * Print characters on screen
  */
