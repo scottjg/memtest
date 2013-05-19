@@ -1,3 +1,8 @@
+This is a slightly modified version of Memtest86+ that paints the bottom of
+the screen green after 2 successful passes. This way, you can scrape the
+console screen in order to determine if the your memory test is done.
+
+
 Memtest86++ v4.20
 ====================
 
