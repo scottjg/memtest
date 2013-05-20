@@ -531,6 +531,7 @@ void do_tick(void)
 	 * is supported
 	 */
 	if (v->rdtsc) {
+		static int last_i = 99;
 		asm __volatile__(
 			"rdtsc":"=a" (l),"=d" (h));
 		asm __volatile__ (
@@ -544,6 +545,11 @@ void do_tick(void)
 		i = t % 60;
 		dprint(LINE_TIME, COL_TIME+9, i%10, 1, 0);
 		dprint(LINE_TIME, COL_TIME+8, i/10, 1, 0);
+		if (i != last_i) {
+			force_tty_dprint(LINE_INFO, COL_PASS, v->pass,   5, 0);
+			force_tty_dprint(LINE_INFO, COL_ERR,  v->ecount, 6, 0);
+			last_i = i;
+		}
 		t /= 60;
 		i = t % 60;
 		dprint(LINE_TIME, COL_TIME+6, i % 10, 1, 0);
