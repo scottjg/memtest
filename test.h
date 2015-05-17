@@ -201,11 +201,11 @@ unsigned long page_of(void *ptr);
 ulong memspeed(ulong src, ulong len, int iter, int type);
 ulong correct_tsc(ulong el_org);
 
-#define PRINTMODE_SUMMARY   1
-#define PRINTMODE_ADDRESSES 0
+#define PRINTMODE_SUMMARY   0
+#define PRINTMODE_ADDRESSES 1
 #define PRINTMODE_PATTERNS  2
 #define PRINTMODE_NONE      3
-#define PRINTMODE_DMI      	4
+#define PRINTMODE_DMI       4
 
 #define BADRAM_MAXPATNS 10
 
